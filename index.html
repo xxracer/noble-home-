@@ -5,289 +5,433 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Noble Health</title>
     <style>
-        :root {
-            --primary-blue: #ffffff;
-            --secondary-green: #4EC2A6;
-            --dark-gray: #5C707E;
-            --light-gray: #336abf;
-        }
+       :root {
+    --primary-blue: #ffffff;
+    --secondary-green: #4EC2A6;
+    --dark-gray: #5C707E;
+    --light-gray: #336abf;
+    --pastel-green: #C8E6C9;
+}
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Arial', sans-serif;
-        }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
 
-        body {
-            background: linear-gradient(rgba(51, 106, 191, 0.8), rgba(51, 106, 191, 0.8)),
-                        url('https://static.wixstatic.com/media/4e407c_1aa4326454f943bda950ba6759811020~mv2.jpg/v1/fill/w_980,h_1864,al_r,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/4e407c_1aa4326454f943bda950ba6759811020~mv2.jpg');
-            background-size: cover;
-            background-position: center;
-            min-height: 100vh;
-        }
+body {
+    background: linear-gradient(rgba(51, 106, 191, 0.8), rgba(51, 106, 191, 0.8)),
+                url('https://static.wixstatic.com/media/4e407c_1aa4326454f943bda950ba6759811020~mv2.jpg/v1/fill/w_980,h_1864,al_r,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/4e407c_1aa4326454f943bda950ba6759811020~mv2.jpg');
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+}
 
-        nav {
-            background: white;
-            padding: 15px 10%;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+/* ========== NAVBAR ========== */
+nav {
+    background: white;
+    padding: 15px 10%;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 
-        .logo img {
-            height: 30px;
-        }
+.logo img {
+    height: 30px;
+}
 
-        .nav-links {
-            display: flex;
-            gap: 30px;
-        }
+.nav-links {
+    display: flex;
+    gap: 30px;
+}
 
-        .nav-item {
-            color: var(--dark-gray);
-            text-decoration: none;
-            font-weight: 600;
-            display: flex;
-            align-items: center;
-            gap: 5px;
-        }
+.nav-item {
+    color: var(--dark-gray);
+    text-decoration: none;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
 
-        .hero {
-            padding: 60px 10%;
-            text-align: center;
-        }
+/* ========== FORM STYLES ========== */
+.hero {
+    padding: 60px 10%;
+    text-align: center;
+}
 
-        .hero h1 {
-            color: var(--primary-blue);
-            font-size: 2.5rem;
-            margin-bottom: 30px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-        }
+.hero h1 {
+    color: var(--primary-blue);
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
 
-        .main-form {
-            background: white;
-            border-radius: 15px;
-            box-shadow: 0 5px 25px rgba(0,0,0,0.1);
-            max-width: 800px;
-            margin: 30px auto;
-            padding: 20px;
-        }
+.main-form {
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 5px 25px rgba(0,0,0,0.1);
+    max-width: 800px;
+    margin: 30px auto;
+    padding: 20px;
+}
 
-        .form-step {
-            display: none;
-            animation: fadeIn 0.5s;
-        }
+.form-step {
+    display: none;
+    animation: fadeIn 0.5s;
+}
 
-        .form-step.active {
-            display: block;
-        }
+.form-step.active {
+    display: block;
+}
 
-        .zip-section {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 10px;
-            margin: 20px 0;
-        }
+.zip-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin: 20px 0;
+}
 
-        .zip-section input[type="text"] {
-            width: 150px;
-            padding: 12px;
-            border: 2px solid #e0e0e0;
-            border-radius: 8px;
-            font-size: 16px;
-        }
+.zip-section input[type="text"] {
+    width: 150px;
+    padding: 12px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 16px;
+}
 
-        .zip-section button {
-            padding: 12px 24px;
-            font-size: 16px;
-            background: var(--secondary-green);
-            color: white;
-            border: none;
-            border-radius: 25px;
-            cursor: pointer;
-        }
+.zip-section button {
+    padding: 12px 24px;
+    font-size: 16px;
+    background: var(--secondary-green);
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+}
 
-        .card-options {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 15px;
-            margin: 30px 0;
-        }
+.card-options {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    margin: 30px 0;
+}
 
-        .card-label {
-            position: relative;
-            padding: 20px;
-            border: 2px solid #e0e0e0;
-            border-radius: 10px;
-            cursor: pointer;
-            transition: all 0.3s;
-            background: white;
-            min-height: 80px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-        }
+.card-label {
+    position: relative;
+    padding: 20px;
+    border: 2px solid #e0e0e0;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s;
+    background: white;
+    min-height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
 
-        .card-label:hover {
-            border-color: var(--secondary-green);
-            transform: translateY(-2px);
-        }
+.card-label:hover {
+    border-color: var(--secondary-green);
+    transform: translateY(-2px);
+}
 
-        .card-label.selected {
-            border-color: var(--secondary-green);
-            background: var(--secondary-green);
-            color: white;
-        }
+.card-label.selected {
+    border-color: var(--secondary-green);
+    background: var(--secondary-green);
+    color: white;
+}
 
-        .card-label input[type="checkbox"] {
-            position: absolute;
-            opacity: 0;
-            width: 100%;
-            height: 100%;
-            cursor: pointer;
-        }
+.card-label input[type="checkbox"] {
+    position: absolute;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
 
-        .button-group {
-            display: flex;
-            gap: 10px;
-            justify-content: center;
-            margin-top: 30px;
-        }
+.button-group {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 30px;
+}
 
-        button {
-            background: var(--secondary-green);
-            color: white;
-            padding: 12px 24px;
-            border: none;
-            border-radius: 25px;
-            cursor: pointer;
-            font-size: 16px;
-            transition: all 0.3s;
-        }
+button {
+    background: var(--secondary-green);
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: all 0.3s;
+}
 
-        button.back {
-            background: var(--dark-gray);
-        }
+button.back {
+    background: var(--dark-gray);
+}
 
-        .loading-screen {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(255,255,255,0.9);
-            display: none;
-            justify-content: center;
-            align-items: center;
-            z-index: 1000;
-        }
+.loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255,255,255,0.9);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
 
-        .loader {
-            border: 4px solid #f3f3f3;
-            border-top: 4px solid var(--secondary-green);
-            border-radius: 50%;
-            width: 40px;
-            height: 40px;
-            animation: spin 1s linear infinite;
-        }
+.loader {
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid var(--secondary-green);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+}
 
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-            padding: 40px 10%;
-        }
+/* ========== SERVICES SECTION ========== */
+.services-container {
+    background: linear-gradient(to bottom, white 0%, var(--pastel-green) 100%);
+    padding: 60px 10%;
+}
 
-        .service-card {
-            background: white;
-            padding: 25px;
-            border-radius: 10px;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-            text-align: center;
-            transition: transform 0.3s ease;
-        }
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
+    gap: 30px;
+}
 
-        .service-card:hover {
-            transform: translateY(-5px);
-        }
+.flip-card {
+    perspective: 500px;
+    min-height: 200px;
+    cursor: pointer;
+}
 
-        .service-card h3 {
-            color: #2A5CAA;
-            margin: 15px 0;
-            font-size: 1.2rem;
-        }
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
 
-        .service-card p {
-            color: #5C707E;
-            line-height: 1.6;
-            margin-bottom: 20px;
-            font-size: 0.9rem;
-        }
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+}
 
-        .service-icon {
-            width: 60px;
-            height: 60px;
-            background: #f0f8ff;
-            border-radius: 50%;
-            margin: 0 auto;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
+.flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: white;
+}
 
-        #thankYouStep {
-            display: none;
-            text-align: center;
-            padding: 40px;
-            background: white;
-            border-radius: 15px;
-            margin: 20px auto;
-            max-width: 800px;
-        }
+.flip-card-back {
+    background: var(--secondary-green);
+    transform: rotateY(180deg);
+    color: white;
+}
 
-        #thankYouStep.active {
-            display: block;
-            animation: fadeIn 0.5s;
-        }
+.nursing-list {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+}
 
-        #thankYouStep h2 {
-            color: var(--secondary-green);
-            font-size: 2rem;
-            margin-bottom: 20px;
-        }
+.nursing-list li {
+    margin: 15px 0;
+    font-size: 1.2rem;
+}
 
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
+/* ========== THANK YOU STEP ========== */
+#thankYouStep {
+    display: none;
+    text-align: center;
+    padding: 40px;
+    background: white;
+    border-radius: 15px;
+    margin: 20px auto;
+    max-width: 800px;
+}
 
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
+#thankYouStep.active {
+    display: block;
+    animation: fadeIn 0.5s;
+}
 
-        @media (max-width: 768px) {
-            .card-options, .services-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .zip-section {
-                flex-direction: column;
-                gap: 15px;
-            }
-            
-            .hero h1 {
-                font-size: 2rem;
-            }
-            
-            .service-card {
-                padding: 15px;
-            }
-        }
+/* ========== OTHER SECTIONS ========== */
+.text-image-section {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    padding: 60px 10%;
+    background: white;
+}
+
+.text-image-section img {
+    max-width: 50%;
+    border-radius: 15px;
+}
+
+.text-image-section .text-content {
+    max-width: 50%;
+}
+
+.faq-section {
+    padding: 60px 10%;
+    background: #f9f9f9;
+}
+
+.faq-section h2 {
+    text-align: center;
+    color: var(--dark-gray);
+    font-size: 2rem;
+    margin-bottom: 40px;
+}
+
+.faq-item {
+    border-bottom: 1px solid #e0e0e0;
+    margin-bottom: 10px;
+}
+
+.faq-question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+    cursor: pointer;
+    color: var(--dark-gray);
+    font-weight: 600;
+}
+
+.faq-question::after {
+    content: '+';
+    font-size: 1.5rem;
+    transition: transform 0.3s;
+}
+
+.faq-question.active::after {
+    content: '-';
+}
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+    padding-left: 20px;
+    color: var(--dark-gray);
+}
+
+footer {
+    background: var(--pastel-green);
+    padding: 40px 10%;
+    color: var(--dark-gray);
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.footer-section {
+    flex: 1;
+    min-width: 200px;
+}
+
+.footer-section h3 {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+.footer-section ul {
+    list-style: none;
+}
+
+.footer-section ul li {
+    margin-bottom: 10px;
+}
+
+.footer-section ul li a {
+    color: var(--dark-gray);
+    text-decoration: none;
+}
+
+.footer-section ul li a:hover {
+    text-decoration: underline;
+}
+
+.footer-submenu ul {
+    display: flex;
+    gap: 15px;
+    list-style: none;
+}
+
+/* ========== ANIMATIONS ========== */
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 768px) {
+    .card-options, .services-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .zip-section {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .text-image-section {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .text-image-section img,
+    .text-image-section .text-content {
+        max-width: 100%;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .footer-submenu ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
     </style>
 </head>
 <body>
@@ -303,7 +447,7 @@
     </nav>
 
     <div class="hero">
-      <h1>The Noble<br>Approach to<br>Healthcare</h1>
+        <h1>Find In-Home Care,<br>Assisted Living &<br>Caregiver Support</h1>
         
         <div class="main-form">
             <!-- Step 1: ZIP Code -->
@@ -437,7 +581,7 @@
 
             <!-- Loading screen -->
             <div class="loading-screen" id="loadingScreen">
-                <div style="text-align: center;">
+                <div class="loading-content">
                     <div class="loader"></div>
                     <div class="loading-text">Searching for options in your area...</div>
                 </div>
@@ -447,18 +591,19 @@
             <div class="form-step" id="finalStep">
                 <h2>You're on the right path!</h2>
                 <p>We've found home care providers in <strong id="location"></strong>.</p>
-                <p>Complete the form to see your options:</p>
-                <input type="text" id="firstName" placeholder="First Name">
-                <input type="text" id="lastName" placeholder="Last Name">
-                <input type="email" id="email" placeholder="Email">
-                <input type="tel" id="phone" placeholder="Phone Number">
+                <div class="form-inputs">
+                    <input type="text" id="firstName" placeholder="First Name" required>
+                    <input type="text" id="lastName" placeholder="Last Name" required>
+                    <input type="email" id="email" placeholder="Email" required>
+                    <input type="tel" id="phone" placeholder="Phone Number" required>
+                </div>
                 <div class="button-group">
                     <button onclick="submitFinalForm()">Get Results</button>
                 </div>
             </div>
 
             <!-- Thank you message -->
-            <div class="form-step" id="thankYouStep">
+            <div id="thankYouStep">
                 <h2>Thank You! 🎉</h2>
                 <p>Your request has been successfully submitted.</p>
                 <p>A Noble Health representative will contact you within 24 hours.</p>
@@ -466,71 +611,203 @@
         </div>
     </div>
 
-    <div class="services-grid">
-        <div class="service-card">
-            <div class="service-icon">
-                <svg width="30" height="30" viewBox="0 0 24 24" fill="#017E98">
-                    <path d="M12 2L2 12h3v8h6v-6h2v6h6v-8h3L12 2z"/>
-                </svg>
+    <!-- Services Section -->
+    <div class="services-container">
+        <div class="services-grid">
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <div class="service-icon">
+                            <svg width="30" height="30" viewBox="0 0 24 24" fill="#017E98">
+                                <path d="M12 2L2 12h3v8h6v-6h2v6h6v-8h3L12 2z"/>
+                            </svg>
+                        </div>
+                        <h3>Hire Home Care</h3>
+                        <p>Assist with daily living activities</p>
+                    </div>
+                    <div class="flip-card-back">
+                        <ul class="nursing-list">
+                            <li>Nursing</li>
+                            <li>Nursing</li>
+                            <li>Nursing</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
-            <h3>Hire Home Care</h3>
-            <p>Noble page</p>
-        </div>
-
-        <div class="service-card">
-            <div class="service-icon">
-                <svg width="30" height="30" viewBox="0 0 24 24" fill="#017E98">
-                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/>
-                    <path d="M13 7h-2v6h6v-2h-4z"/>
-                </svg>
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <div class="service-icon">
+                            <svg width="30" height="30" viewBox="0 0 24 24" fill="#017E98">
+                                <path d="M12 2L2 12h3v8h6v-6h2v6h6v-8h3L12 2z"/>
+                            </svg>
+                        </div>
+                        <h3>Hire Home Care</h3>
+                        <p>Assist with daily living activities</p>
+                    </div>
+                    <div class="flip-card-back">
+                        <ul class="nursing-list">
+                            <li>Nursing</li>
+                            <li>Nursing</li>
+                            <li>Nursing</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
-            <h3>Find Senior Housing</h3>
-            <p>noble page</p>
-        </div>
-
-        <div class="service-card">
-            <div class="service-icon">
-                <svg width="30" height="30" viewBox="0 0 24 24" fill="#017E98">
-                    <path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H6l-2 2V4h16v12z"/>
-                </svg>
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <div class="service-icon">
+                            <svg width="30" height="30" viewBox="0 0 24 24" fill="#017E98">
+                                <path d="M12 2L2 12h3v8h6v-6h2v6h6v-8h3L12 2z"/>
+                            </svg>
+                        </div>
+                        <h3>Hire Home Care</h3>
+                        <p>Assist with daily living activities</p>
+                    </div>
+                    <div class="flip-card-back">
+                        <ul class="nursing-list">
+                            <li>Nursing</li>
+                            <li>Nursing</li>
+                            <li>Nursing</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
-            <h3>Caregiver Support</h3>
-            <p>Noble page</p>
+            
         </div>
     </div>
-    <div class="services-grid">
-      <div class="service-card">
-          <div class="service-icon">
-              <svg width="30" height="30" viewBox="0 0 24 24" fill="#017E98">
-                  <path d="M12 2L2 12h3v8h6v-6h2v6h6v-8h3L12 2z"/>
-              </svg>
-          </div>
-          <h3>Hire Home Care</h3>
-          <p>Noble page</p>
-      </div>
+    <div class="services-container">
+        <div class="services-grid">
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <div class="service-icon">
+                            <svg width="30" height="30" viewBox="0 0 24 24" fill="#017E98">
+                                <path d="M12 2L2 12h3v8h6v-6h2v6h6v-8h3L12 2z"/>
+                            </svg>
+                        </div>
+                        <h3>Hire Home Care</h3>
+                        <p>Assist with daily living activities</p>
+                    </div>
+                    <div class="flip-card-back">
+                        <ul class="nursing-list">
+                            <li>Nursing</li>
+                            <li>Nursing</li>
+                            <li>Nursing</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <div class="service-icon">
+                            <svg width="30" height="30" viewBox="0 0 24 24" fill="#017E98">
+                                <path d="M12 2L2 12h3v8h6v-6h2v6h6v-8h3L12 2z"/>
+                            </svg>
+                        </div>
+                        <h3>Hire Home Care</h3>
+                        <p>Assist with daily living activities</p>
+                    </div>
+                    <div class="flip-card-back">
+                        <ul class="nursing-list">
+                            <li>Nursing</li>
+                            <li>Nursing</li>
+                            <li>Nursing</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <div class="service-icon">
+                            <svg width="30" height="30" viewBox="0 0 24 24" fill="#017E98">
+                                <path d="M12 2L2 12h3v8h6v-6h2v6h6v-8h3L12 2z"/>
+                            </svg>
+                        </div>
+                        <h3>Hire Home Care</h3>
+                        <p>Assist with daily living activities</p>
+                    </div>
+                    <div class="flip-card-back">
+                        <ul class="nursing-list">
+                            <li>Nursing</li>
+                            <li>Nursing</li>
+                            <li>Nursing</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div><div class="services-container">
+   
 
-      <div class="service-card">
-          <div class="service-icon">
-              <svg width="30" height="30" viewBox="0 0 24 24" fill="#017E98">
-                  <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/>
-                  <path d="M13 7h-2v6h6v-2h-4z"/>
-              </svg>
-          </div>
-          <h3>Veterans</h3>
-          <p>Noble page</p>
-      </div>
 
-      <div class="service-card">
-          <div class="service-icon">
-              <svg width="30" height="30" viewBox="0 0 24 24" fill="#017E98">
-                  <path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H6l-2 2V4h16v12z"/>
-              </svg>
-          </div>
-          <h3>Caregiver Support</h3>
-          <p>Noble page</p>
-      </div>
-  </div>
-<div><p>TExt</p></div>
+    <!-- Text + Image Section -->
+    <div class="text-image-section">
+        <img src="https://via.placeholder.com/500x300" alt="Our Mission">
+        <div class="text-content">
+            <h2>Our Mission</h2>
+            <p>At Noble Health, we are committed to providing quality care and support to those who need it most.</p>
+        </div>
+    </div>
+
+    <!-- FAQ Section -->
+    <div class="faq-section">
+        <h2>Preguntas Frecuentes</h2>
+        <div class="faq-item">
+            <div class="faq-question">¿Cómo puedo contratar los servicios de Noble Health?</div>
+            <div class="faq-answer">
+                <p>Puedes contactarnos a través de nuestro formulario en línea o llamando a nuestro número de atención al cliente.</p>
+            </div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">¿Qué tipos de servicios ofrecen?</div>
+            <div class="faq-answer">
+                <p>Ofrecemos cuidado en el hogar, asistencia para personas mayores y apoyo para cuidadores.</p>
+            </div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">¿Tienen cobertura en mi área?</div>
+            <div class="faq-answer">
+                <p>Nuestros servicios están disponibles en múltiples áreas. Contáctanos para verificar la disponibilidad en tu ubicación.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Noble Health</h3>
+                <p>Providing care since 2023</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <ul>
+                    <li>Email: info@noblehealth.com</li>
+                    <li>Phone: +1 234 567 890</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-submenu">
+            <ul>
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Terms & Conditions</a></li>
+                <li><a href="#">Site Map</a></li>
+            </ul>
+        </div>
+    </footer>
     <script>
         let currentStep = 1;
         const totalSteps = 5;
@@ -592,6 +869,19 @@
             // Mostrar mensaje final
             document.getElementById('thankYouStep').classList.add('active');
         }
+
+        // Script para las FAQ
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const answer = question.nextElementSibling;
+                question.classList.toggle('active');
+                if (question.classList.contains('active')) {
+                    answer.style.maxHeight = answer.scrollHeight + 'px';
+                } else {
+                    answer.style.maxHeight = '0';
+                }
+            });
+        });
     </script>
 </body>
 </html>
